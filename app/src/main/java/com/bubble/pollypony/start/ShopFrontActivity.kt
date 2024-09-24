@@ -190,21 +190,9 @@ class ShopFrontActivity : AppCompatActivity(), OnPreferenceDataStoreChangeListen
                         }
                     }
                 }.also {
-                    if (pingV.isEmpty() && pingDownloadV.isEmpty() && pingUploadV.isEmpty()) {
-                        lifecycleScope.launch(Dispatchers.Main) {
-                            on_find_running.visibility = View.GONE
-                            "Response timeout".toast(this@ShopFrontActivity)
-                        }
-
-                    } else {
-                        lifecycleScope.launch(Dispatchers.Main) {
-                            on_find_running.visibility = View.GONE
-                            val intent = Intent(this@ShopFrontActivity, InspectActivity::class.java)
-                            intent.putExtra("ping", pingV)
-                            intent.putExtra("download", pingDownloadV)
-                            intent.putExtra("upload", pingUploadV)
-                            startActivity(intent)
-                        }
+                    lifecycleScope.launch(Dispatchers.Main) {
+                        on_find_running.visibility = View.GONE
+                        "Response timeout".toast(this@ShopFrontActivity)
                     }
                 }
             }
@@ -326,6 +314,7 @@ class ShopFrontActivity : AppCompatActivity(), OnPreferenceDataStoreChangeListen
 
                 }
             } else {
+                PonyParams.webShort()
                 if (PonyParams.inLimited) {
                     //country in limited show dialog and finish
                     showPonyDialog(getString(R.string.pony_restricted), "",true,  getString(R.string.pony_confirm)) {

@@ -80,7 +80,7 @@ class PonyParams {
                     country = "United States"
                     city = "c2"
                     ip = "104.160.42.226"
-                    port = 11194
+                    port = 15909
                     which = "aes-256-gcm"
                     word = "JtQbdQ5SvsmraSDz"
                     atAuto = true
@@ -89,7 +89,7 @@ class PonyParams {
                     country = "United States"
                     city = "c3"
                     ip = "104.160.42.226"
-                    port = 11195
+                    port = 15909
                     which = "aes-256-gcm"
                     word = "JtQbdQ5SvsmraSDz"
                     atAuto = true
@@ -101,7 +101,7 @@ class PonyParams {
                 add(ChildTopAdapter.ChildTopContent().apply {
                     country = "United States"
                     city = "c1"
-                    ip = "104.160.42.226"
+                    ip = "104.160.42.243"
                     port = 15909
                     which = "aes-256-gcm"
                     word = "JtQbdQ5SvsmraSDz"
@@ -111,7 +111,7 @@ class PonyParams {
                     country = "United States"
                     city = "c2"
                     ip = "104.160.42.226"
-                    port = 11194
+                    port = 15909
                     which = "aes-256-gcm"
                     word = "JtQbdQ5SvsmraSDz"
                     atAuto = false
@@ -120,7 +120,7 @@ class PonyParams {
                     country = "United States"
                     city = "c3"
                     ip = "104.160.42.226"
-                    port = 11195
+                    port = 15909
                     which = "aes-256-gcm"
                     word = "JtQbdQ5SvsmraSDz"
                     atAuto = false
@@ -129,7 +129,7 @@ class PonyParams {
                     country = "Japan"
                     city = "c4"
                     ip = "104.160.42.226"
-                    port = 11195
+                    port = 15909
                     which = "aes-256-gcm"
                     word = "JtQbdQ5SvsmraSDz"
                     atAuto = false
@@ -138,7 +138,7 @@ class PonyParams {
                     country = "Belgium"
                     city = "c5"
                     ip = "104.160.42.226"
-                    port = 11195
+                    port = 15909
                     which = "aes-256-gcm"
                     word = "JtQbdQ5SvsmraSDz"
                     atAuto = false
