@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/b_activate"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".start.ActivateActivity">
+
+    <androidx.legacy.widget.Space
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/c_activate" />
+
+    <TextView
+        android:layout_marginTop="24dp"
+        android:textStyle="bold"
+        android:text="@string/app_name"
+        android:textSize="22dp"
+        android:textColor="#222222"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.legacy.widget.Space
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"/>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:layout_width="240dp"
+        android:layout_height="10dp"
+        android:layout_marginBottom="58dp"
+        android:indeterminate="true"
+        app:indicatorColor="#FF757E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:trackColor="#FFFFE4E7"
+        app:trackCornerRadius="8dp"
+        app:trackThickness="10dp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PollyPony</string>
+    <string name="shop_count">00:00:00</string>
+    <string name="connect_t">Connection time</string>
+    <string name="pony_yes">yes</string>
+    <string name="pony_no">no</string>
+    <string name="pony_no_network">No network available. Please check your connection.</string>
+    <string name="pony_restricted">This service is restricted in your region.</string>
+    <string name="pony_confirm">Confirm</string>
+    <string name="pony_ok">OK</string>
+    <string name="pony_con_success">Connection successful!</string>
+    <string name="pony_dis_success">Disconnect successfully!</string>
+    <string name="pony_running">Network speed test running...</string>
+    <string name="pony_switch">Are you sure you want to switch servers? Switching will require disconnecting the current connection.</string>
+</resources>

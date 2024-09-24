@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#99000000"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:indeterminateOnly="true"
+        android:indeterminateDrawable="@drawable/bd_running"
+        android:indeterminateBehavior="repeat"
+        android:layout_width="40dp"
+        android:layout_height="40dp"/>
+
+    <TextView
+        android:layout_marginTop="16dp"
+        android:textSize="14dp"
+        android:textColor="@color/white"
+        android:text="@string/pony_running"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

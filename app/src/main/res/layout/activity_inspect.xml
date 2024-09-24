@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFF757E"
+    tools:context=".start.InspectActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="#FFFF757E"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/c_light_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:src="@mipmap/c_light_back" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Speed Results"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:src="@mipmap/c_dark_back"
+                android:visibility="invisible" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingTop="32dp"
+            android:gravity="center_horizontal"
+            android:background="@mipmap/b_on_find"
+            android:layout_height="0dp">
+
+            <TextView
+                android:text="Download"
+                android:textSize="14dp"
+                android:textColor="#FF222222"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <FrameLayout
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bd_inspect_circle"
+                android:layout_width="120dp"
+                android:layout_height="120dp">
+
+                <TextView
+                    android:id="@+id/inspect_down"
+                    android:layout_gravity="center"
+                    android:text="0 kb/s"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="#FF222222"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ProgressBar
+                    android:id="@+id/down_loading"
+                    android:layout_gravity="center"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:visibility="gone"
+                    android:indeterminate="true"
+                    android:indeterminateDrawable="@drawable/anim_inspect_loading_36" />
+
+            </FrameLayout>
+
+            <TextView
+                android:text="Upload"
+                android:textSize="14dp"
+                android:layout_marginTop="24dp"
+                android:textColor="#FF222222"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <FrameLayout
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bd_inspect_circle"
+                android:layout_width="120dp"
+                android:layout_height="120dp">
+
+                <TextView
+                    android:id="@+id/inspect_up"
+                    android:layout_gravity="center"
+                    android:text="0 kb/s"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="#FF222222"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ProgressBar
+                    android:id="@+id/up_loading"
+                    android:layout_gravity="center"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:visibility="gone"
+                    android:indeterminate="true"
+                    android:indeterminateDrawable="@drawable/anim_inspect_loading_36" />
+
+            </FrameLayout>
+
+            <View
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="#1A000000"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:id="@+id/inspect_ms"
+                android:gravity="center"
+                android:textColor="#FF222222"
+                android:textSize="14dp"
+                android:text="-ms"
+                android:background="@drawable/bd_inspect_ms"
+                android:layout_width="224dp"
+                android:layout_height="42dp"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/retry"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Retry"
+                    android:textSize="16dp"
+                    android:textColor="#FF222222"
+                    android:layout_width="42dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_marginTop="-3dp"
+                    android:background="#FF222222"
+                    android:layout_width="42dp"
+                    android:layout_height="1dp"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</FrameLayout>
