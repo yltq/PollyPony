@@ -60,6 +60,8 @@ class ShopFrontActivity : AppCompatActivity(), OnPreferenceDataStoreChangeListen
     private lateinit var c_up: TextView
     private var goJob: Job? = null
 
+    private var connectRandom: Boolean = true
+
     protected var startService = registerForActivityResult(StartService()) {
         if (it) return@registerForActivityResult
         goConnect()
@@ -301,7 +303,9 @@ class ShopFrontActivity : AppCompatActivity(), OnPreferenceDataStoreChangeListen
             repeat(10) {
                 delay(200)
             }.also {
-                PonyParams.startService()
+                val random = connectRandom
+                connectRandom = true
+                PonyParams.startService(random)
             }
         }
     }
@@ -412,10 +416,14 @@ class ShopFrontActivity : AppCompatActivity(), OnPreferenceDataStoreChangeListen
                 val data = it.data?:return@registerForActivityResult
                 val connect = data.getBooleanExtra("connect", false)
                 val disconnect = data.getBooleanExtra("disconnect", false)
+                val connect_not_random = data.getBooleanExtra("connect_not_random", false)
                 if (connect) {
                     startConnect(true)
                 } else if (disconnect) {
                     startStop()
+                } else if (connect_not_random) {
+                    connectRandom = false
+                    startConnect(true)
                 }
             }
         }

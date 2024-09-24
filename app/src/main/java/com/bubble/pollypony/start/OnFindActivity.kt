@@ -115,28 +115,51 @@ class OnFindActivity : AppCompatActivity() {
                 if (autoSize == 0) {
                     bestList.addAll(PonyParams.notAutoList.take(3))
                 } else if (autoSize == 1) {
-                    bestList.addAll(PonyParams.autoList.take(1))
-                    bestList.addAll(PonyParams.notAutoList.take(2))
+                    val c1 = PonyParams.autoList.take(1)
+                    bestList.addAll(c1)
+                    val l = PonyParams.notAutoList.filter {
+                        (it.country != c1[0].country || it.city != c1[0].city) && (it.ip != c1[0].ip
+                                && it.port != c1[0].port)
+                    }
+                    if (l.size >= 2) {
+                        bestList.addAll(l.take(2))
+                    }
+
                 } else if (autoSize == 2) {
-                    bestList.addAll(PonyParams.autoList.take(2))
-                    bestList.addAll(PonyParams.notAutoList.take(1))
+                    val c1 = PonyParams.autoList.take(2)
+                    bestList.addAll(c1)
+                    val l = PonyParams.notAutoList.filter {
+                        (it.country != c1[0].country || it.city != c1[0].city) && (it.ip != c1[0].ip
+                                && it.port != c1[0].port) &&
+                                (it.country != c1[1].country || it.city != c1[1].city) && (it.ip != c1[1].ip
+                                && it.port != c1[1].port)
+                    }
+                    if (l.isNotEmpty()) {
+                        bestList.addAll(l.take(1))
+                    }
                 } else if (autoSize == 3) {
                     bestList.addAll(PonyParams.autoList.take(3))
                 }
-                recommend_1_logo.setImageResource(buildFlag(bestList[0].country))
-                recommend_1_country.text = bestList[0].country + " " + bestList[0].city
+                if (bestList.size >= 1) {
+                    recommend_1_logo.setImageResource(buildFlag(bestList[0].country))
+                    recommend_1_country.text = bestList[0].country + " " + bestList[0].city
+                }
 
-                recommend_2_logo.setImageResource(buildFlag(bestList[1].country))
-                recommend_2_country.text = bestList[1].country + " " + bestList[1].city
+                if (bestList.size >= 2) {
+                    recommend_2_logo.setImageResource(buildFlag(bestList[1].country))
+                    recommend_2_country.text = bestList[1].country + " " + bestList[1].city
+                }
 
-                recommend_3_logo.setImageResource(buildFlag(bestList[2].country))
-                recommend_3_country.text = bestList[2].country + " " + bestList[2].city
+                if (bestList.size >= 3) {
+                    recommend_3_logo.setImageResource(buildFlag(bestList[2].country))
+                    recommend_3_country.text = bestList[2].country + " " + bestList[2].city
+                }
 
                 recommend_1.setOnClickListener {
                     PonyParams.refreshDataStore(bestList[0])
                     // to connect
                     val intent = Intent()
-                    intent.putExtra("connect", true)
+                    intent.putExtra("connect_not_random", true)
                     setResult(Activity.RESULT_OK, intent)
                     finish()
                 }
@@ -144,7 +167,7 @@ class OnFindActivity : AppCompatActivity() {
                     PonyParams.refreshDataStore(bestList[1])
                     // to connect
                     val intent = Intent()
-                    intent.putExtra("connect", true)
+                    intent.putExtra("connect_not_random", true)
                     setResult(Activity.RESULT_OK, intent)
                     finish()
                 }
@@ -152,7 +175,7 @@ class OnFindActivity : AppCompatActivity() {
                     PonyParams.refreshDataStore(bestList[2])
                     // to connect
                     val intent = Intent()
-                    intent.putExtra("connect", true)
+                    intent.putExtra("connect_not_random", true)
                     setResult(Activity.RESULT_OK, intent)
                     finish()
                 }
@@ -162,7 +185,7 @@ class OnFindActivity : AppCompatActivity() {
             on_find_reon.setOnClickListener {
                 // to connect
                 val intent = Intent()
-                intent.putExtra("connect", true)
+                intent.putExtra("connect_not_random", true)
                 setResult(Activity.RESULT_OK, intent)
                 finish()
             }
