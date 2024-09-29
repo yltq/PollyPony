@@ -62,7 +62,7 @@ import kotlin.reflect.KClass
 object Core : Configuration.Provider {
     lateinit var app: Application
         @VisibleForTesting set
-    lateinit var configureIntent: (Context) -> PendingIntent
+//    lateinit var configureIntent: (Context) -> PendingIntent
     val activity by lazy { app.getSystemService<ActivityManager>()!! }
     val clipboard by lazy { app.getSystemService<ClipboardManager>()!! }
     val connectivity by lazy { app.getSystemService<ConnectivityManager>()!! }
@@ -87,13 +87,11 @@ object Core : Configuration.Provider {
         return ProfileManager.expand(ProfileManager.getProfile(DataStore.profileId) ?: return null)
     }
 
-    fun init(app: Application, configureClass: KClass<out Any>) {
+    fun init(app: Application, config: Boolean) {
         this.app = app
-        this.configureIntent = {
-            PendingIntent.getActivity(it, 0, Intent(it, configureClass.java)
-                    .setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT), PendingIntent.FLAG_IMMUTABLE)
+        if (!config) {
+            return
         }
-
         if (Build.VERSION.SDK_INT >= 24) {  // migrate old files
             deviceStorage.moveDatabaseFrom(app, Key.DB_PUBLIC)
             val old = Acl.getFile(Acl.CUSTOM_RULES_USER, app)

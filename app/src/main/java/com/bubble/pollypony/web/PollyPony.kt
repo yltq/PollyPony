@@ -16,7 +16,7 @@ class PollyPony: Application() {
         super.onCreate()
         pony = this
         val ponyMain = ponyMain()
-        Core.init(this, ShopFrontActivity::class)
+        Core.init(this, true)
         if (ponyMain) {
             showPonyCold = true
         }
