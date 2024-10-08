@@ -69,18 +69,9 @@ class PonyParams {
             mutableListOf<ChildTopAdapter.ChildTopContent>().run {
                 add(ChildTopAdapter.ChildTopContent().apply {
                     country = "United States"
-                    city = "c1"
+                    city = "Washington"
                     ip = "104.160.42.226"
                     port = 15909
-                    which = "aes-256-gcm"
-                    word = "JtQbdQ5SvsmraSDz"
-                    atAuto = true
-                })
-                add(ChildTopAdapter.ChildTopContent().apply {
-                    country = "United States"
-                    city = "c2"
-                    ip = "104.160.42.227"
-                    port = 15919
                     which = "aes-256-gcm"
                     word = "JtQbdQ5SvsmraSDz"
                     atAuto = true
@@ -91,7 +82,7 @@ class PonyParams {
             mutableListOf<ChildTopAdapter.ChildTopContent>().run {
                 add(ChildTopAdapter.ChildTopContent().apply {
                     country = "United States"
-                    city = "c1"
+                    city = "Washington"
                     ip = "104.160.42.226"
                     port = 15909
                     which = "aes-256-gcm"
@@ -100,7 +91,7 @@ class PonyParams {
                 })
                 add(ChildTopAdapter.ChildTopContent().apply {
                     country = "United States"
-                    city = "aaa"
+                    city = "Washington"
                     ip = "104.160.42.226"
                     port = 15910
                     which = "aes-256-gcm"
@@ -109,27 +100,9 @@ class PonyParams {
                 })
                 add(ChildTopAdapter.ChildTopContent().apply {
                     country = "United States"
-                    city = "bbb"
+                    city = "Washington"
                     ip = "104.160.42.212"
                     port = 15915
-                    which = "aes-256-gcm"
-                    word = "JtQbdQ5SvsmraSDz"
-                    atAuto = false
-                })
-                add(ChildTopAdapter.ChildTopContent().apply {
-                    country = "Japan"
-                    city = "ccc"
-                    ip = "104.160.42.219"
-                    port = 15912
-                    which = "aes-256-gcm"
-                    word = "JtQbdQ5SvsmraSDz"
-                    atAuto = false
-                })
-                add(ChildTopAdapter.ChildTopContent().apply {
-                    country = "Belgium"
-                    city = "ddd"
-                    ip = "104.160.42.220"
-                    port = 15914
                     which = "aes-256-gcm"
                     word = "JtQbdQ5SvsmraSDz"
                     atAuto = false
